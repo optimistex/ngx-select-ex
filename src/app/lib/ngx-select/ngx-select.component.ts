@@ -3,15 +3,15 @@ import {
     Component, ElementRef, EventEmitter, forwardRef, HostListener, IterableDiffer, IterableDiffers, ChangeDetectorRef, ContentChild,
     TemplateRef, Optional, Inject, InjectionToken, ChangeDetectionStrategy
 } from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
-import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
-import {Observable, Subject, BehaviorSubject, EMPTY, of, from, merge, combineLatest} from 'rxjs';
-import {tap, filter, map, share, flatMap, toArray, distinctUntilChanged} from 'rxjs/operators';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { Observable, Subject, BehaviorSubject, EMPTY, of, from, merge, combineLatest } from 'rxjs';
+import { tap, filter, map, share, flatMap, toArray, distinctUntilChanged } from 'rxjs/operators';
 import * as lodashNs from 'lodash';
 import * as escapeStringNs from 'escape-string-regexp';
-import {NgxSelectOptGroup, NgxSelectOption, TSelectOption} from './ngx-select.classes';
-import {NgxSelectOptionDirective, NgxSelectOptionNotFoundDirective, NgxSelectOptionSelectedDirective} from './ngx-templates.directive';
-import {INgxOptionNavigated, INgxSelectOption, INgxSelectOptions} from './ngx-select.interfaces';
+import { NgxSelectOptGroup, NgxSelectOption, TSelectOption } from './ngx-select.classes';
+import { NgxSelectOptionDirective, NgxSelectOptionNotFoundDirective, NgxSelectOptionSelectedDirective } from './ngx-templates.directive';
+import { INgxOptionNavigated, INgxSelectOption, INgxSelectOptions } from './ngx-select.interfaces';
 
 const _ = lodashNs;
 const escapeString = escapeStringNs;
@@ -87,9 +87,9 @@ export class NgxSelectComponent implements INgxSelectOptions, ControlValueAccess
     @ViewChild('input') protected inputElRef: ElementRef;
     @ViewChild('choiceMenu') protected choiceMenuElRef: ElementRef;
 
-    @ContentChild(NgxSelectOptionDirective, {read: TemplateRef}) templateOption: NgxSelectOptionDirective;
-    @ContentChild(NgxSelectOptionSelectedDirective, {read: TemplateRef}) templateSelectedOption: NgxSelectOptionSelectedDirective;
-    @ContentChild(NgxSelectOptionNotFoundDirective, {read: TemplateRef}) templateOptionNotFound: NgxSelectOptionNotFoundDirective;
+    @ContentChild(NgxSelectOptionDirective, { read: TemplateRef }) templateOption: NgxSelectOptionDirective;
+    @ContentChild(NgxSelectOptionSelectedDirective, { read: TemplateRef }) templateSelectedOption: NgxSelectOptionSelectedDirective;
+    @ContentChild(NgxSelectOptionNotFoundDirective, { read: TemplateRef }) templateOptionNotFound: NgxSelectOptionNotFoundDirective;
 
     public optionsOpened = false;
     public optionsFiltered: TSelectOption[];
@@ -121,7 +121,7 @@ export class NgxSelectComponent implements INgxSelectOptions, ControlValueAccess
     }
 
     constructor(iterableDiffers: IterableDiffers, private sanitizer: DomSanitizer, private cd: ChangeDetectorRef,
-                @Inject(NGX_SELECT_OPTIONS) @Optional() defaultOptions: INgxSelectOptions) {
+        @Inject(NGX_SELECT_OPTIONS) @Optional() defaultOptions: INgxSelectOptions) {
         Object.assign(this, defaultOptions);
 
         // DIFFERS
@@ -243,7 +243,7 @@ export class NgxSelectComponent implements INgxSelectOptions, ControlValueAccess
     }
 
     public setBtnSize() {
-        return {'btn-sm': this.size === 'small', 'btn-lg': this.size === 'large'};
+        return { 'btn-sm': this.size === 'small', 'btn-lg': this.size === 'large' };
     }
 
     public get optionsSelected(): NgxSelectOption[] {
@@ -292,7 +292,7 @@ export class NgxSelectComponent implements INgxSelectOptions, ControlValueAccess
     private navigateOption(navigation: ENavigation) {
         this.optionsFilteredFlat().pipe(
             map<NgxSelectOption[], INgxOptionNavigated>((options: NgxSelectOption[]) => {
-                const navigated: INgxOptionNavigated = {index: -1, activeOption: null, filteredOptionList: options};
+                const navigated: INgxOptionNavigated = { index: -1, activeOption: null, filteredOptionList: options };
                 let newActiveIdx;
                 switch (navigation) {
                     case ENavigation.first:
@@ -460,7 +460,9 @@ export class NgxSelectComponent implements INgxSelectOptions, ControlValueAccess
         if (option && !option.disabled) {
             this.subjOptionsSelected.next((this.multiple ? this.subjOptionsSelected.value : []).concat([option]));
             this.select.emit(option.value);
-            this.optionsClose(/*true*/);
+            if (!this.multiple) {
+                this.optionsClose(/*true*/);
+            }
             this.onTouched();
         }
     }
