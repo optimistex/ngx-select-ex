@@ -11,8 +11,8 @@ export class CustomEntriesDemoComponent {
         'Katarina', 'Lea', 'Liara', 'Maria', 'Mara', 'Melanie', 'Natalie'];
 
     public ngxDisabled = false;
-    public doSelectOptions = (options: INgxSelectOption[]) => console.log('MultipleDemoComponent.doSelectOptions', options);
-
     public names = new FormControl();
+
+    public doSelectOptions = (options: INgxSelectOption[]) => console.log('MultipleDemoComponent.doSelectOptions', options);
 
 }

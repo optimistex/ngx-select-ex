@@ -66,7 +66,7 @@ export class NgxSelectComponent implements INgxSelectOptions, ControlValueAccess
     @Input() public showOptionNotFoundForEmptyItems = false;
     @Input() public isFocused = false;
     @Input() public keepSelectMenuOpened = false;
-    @Input() public customEntries: boolean = false;
+    @Input() public customEntries = false;
     public keyCodeToRemoveSelected = 'Delete';
     public keyCodeToOptionsOpen = ['Enter', 'NumpadEnter'];
     public keyCodeToOptionsClose = 'Escape';
@@ -527,10 +527,11 @@ export class NgxSelectComponent implements INgxSelectOptions, ControlValueAccess
                 if (this.searchCallback) {
                     return this.searchCallback(search, option);
                 }
-                return (!search || regExp.test(option.text)) && (!this.multiple || !selectedOptions.find(opt => opt.value === option.value));
+                return (!search || regExp.test(option.text)) &&
+                    (!this.multiple || !selectedOptions.find(opt => opt.value === option.value));
             };
 
-        const filter = options.filter((option: TSelectOption) => {
+        return options.filter((option: TSelectOption) => {
             if (option instanceof NgxSelectOption) {
                 return filterOption(option as NgxSelectOption);
             } else if (option instanceof NgxSelectOptGroup) {
@@ -539,7 +540,6 @@ export class NgxSelectComponent implements INgxSelectOptions, ControlValueAccess
                 return subOp.optionsFiltered.length;
             }
         });
-        return filter;
     }
 
     private ensureVisibleElement(element: HTMLElement) {
