@@ -66,6 +66,7 @@ export class NgxSelectComponent implements INgxSelectOptions, ControlValueAccess
     @Input() public showOptionNotFoundForEmptyItems = false;
     @Input() public isFocused = false;
     @Input() public keepSelectMenuOpened = false;
+    @Input() public customEntries = false;
     public keyCodeToRemoveSelected = 'Delete';
     public keyCodeToOptionsOpen = ['Enter', 'NumpadEnter'];
     public keyCodeToOptionsClose = 'Escape';
@@ -189,11 +190,20 @@ export class NgxSelectComponent implements INgxSelectOptions, ControlValueAccess
         ).pipe(
             map(([optionsFlat, actualValue]: [NgxSelectOption[], any[]]) => {
                 const optionsSelected = [];
-
                 actualValue.forEach((value: any) => {
-                    const selectedOption = optionsFlat.find((option: NgxSelectOption) => option.value === value);
-                    if (selectedOption) {
-                        optionsSelected.push(selectedOption);
+                    if (this.customEntries && this.multiple) {
+                        if (value) {
+                            let selectedOption = optionsFlat.find((option: NgxSelectOption) => option.value === value);
+                            if (!selectedOption) {
+                                selectedOption = new NgxSelectOption(value, value, false, value);
+                            }
+                            optionsSelected.push(selectedOption);
+                        }
+                    } else {
+                        const selectedOption = optionsFlat.find((option: NgxSelectOption) => option.value === value);                    
+                        if (selectedOption) {
+                            optionsSelected.push(selectedOption);
+                        }
                     }
                 });
 
@@ -387,8 +397,15 @@ export class NgxSelectComponent implements INgxSelectOptions, ControlValueAccess
             event.stopPropagation();
             switch (event.code) {
                 case ([].concat(this.keyCodeToOptionsSelect).indexOf(event.code) + 1) && event.code:
-                    this.optionSelect(this.optionActive);
-                    this.navigateOption(ENavigation.next);
+                    if (this.customEntries && this.multiple && !this.optionActive) {
+                        const selection = event.srcElement['value'];
+                        const newEntry: NgxSelectOption = new NgxSelectOption(selection, selection, false, selection);
+                        this.subjOptionsSelected.next((this.multiple ? this.subjOptionsSelected.value : []).concat([newEntry]));
+                        event.srcElement['value'] = '';
+                    } else {
+                        this.optionSelect(this.optionActive);
+                        this.navigateOption(ENavigation.next);
+                    }
                     break;
                 case this.keyCodeToNavigateFirst:
                     this.navigateOption(ENavigation.first);
@@ -515,7 +532,8 @@ export class NgxSelectComponent implements INgxSelectOptions, ControlValueAccess
                 if (this.searchCallback) {
                     return this.searchCallback(search, option);
                 }
-                return (!search || regExp.test(option.text)) && (!this.multiple || selectedOptions.indexOf(option) === -1);
+                return (!search || regExp.test(option.text)) &&
+                    (!this.multiple || !selectedOptions.find(opt => opt.value === option.value));
             };
 
         return options.filter((option: TSelectOption) => {

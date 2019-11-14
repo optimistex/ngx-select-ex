@@ -1,0 +1,24 @@
+<h3>Custom entries</h3>
+
+<div class="example-block">
+    <div class="example-block__item">
+        <ngx-select [multiple]="true"
+                    [customEntries]="true"
+                    [items]="items"
+                    [formControl]="names"
+                    [disabled]="ngxDisabled"
+                    [autoClearSearch]="true"
+                    placeholder="Nothing selected"
+                    (selectionChanges)="doSelectOptions($event)">
+        </ngx-select>
+        <p></p>
+        <div class="alert alert-secondary">
+            <pre>{{names.value | json}}</pre>
+        </div>
+        <div>
+            <button class="btn btn-primary" (click)="ngxDisabled = !ngxDisabled">
+                {{ngxDisabled ? 'Enable' : 'Disable'}}
+            </button>
+        </div>
+    </div>
+</div>

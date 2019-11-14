@@ -12,6 +12,7 @@ import {RichDemoComponent} from './demo/select/rich-demo';
 import {MultipleDemoComponent} from './demo/select/multiple-demo';
 import {ChildrenDemoComponent} from './demo/select/children-demo';
 import {NoAutoCompleteDemoComponent} from './demo/select/no-autocomplete-demo';
+import {CustomEntriesDemoComponent} from './demo/select/custom-entries-demo';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {
@@ -33,7 +34,8 @@ describe('AppComponent', () => {
                 MultipleDemoComponent,
                 NoAutoCompleteDemoComponent,
                 RichDemoComponent,
-                SingleDemoComponent
+                SingleDemoComponent,
+                CustomEntriesDemoComponent
             ],
         }).compileComponents();
     }));
