@@ -77,6 +77,7 @@ Any item can be `disabled` for prevent selection. For disable an item add the pr
 | optGroupLabelField | string | `'label'` |  Provide an opportunity to change the name a `label` property of objects with an `options` property in the `items` |
 | optGroupOptionsField | string | `'options'` |  Provide an opportunity to change the name of an `options` property of objects in the `items` |
 | [multiple] | boolean | `false` |  Mode of this component. If set `true` user can select more than one option |
+| [customEntries] | boolean | `false` | Submode for Multiple. If set `true` allows the user to create custom entries with Enter-Press |
 | [allowClear] | boolean | `false` |  Set to `true` to allow the selection to be cleared. This option only applies to single-value inputs |
 | [placeholder] | string | `''` |  Set to `true` Placeholder text to display when the element has no focus and selected items |
 | [noAutoComplete] | boolean | `false` |  Set to `true` Set to `true` to hide the search input. This option only applies to single-value inputs |
