@@ -402,6 +402,7 @@ export class NgxSelectComponent implements INgxSelectOptions, ControlValueAccess
                         const newEntry: NgxSelectOption = new NgxSelectOption(selection, selection, false, selection);
                         this.subjOptionsSelected.next((this.multiple ? this.subjOptionsSelected.value : []).concat([newEntry]));
                         event.srcElement['value'] = '';
+                        this.optionsClose();
                     } else {
                         this.optionSelect(this.optionActive);
                         this.navigateOption(ENavigation.next);
