@@ -83,6 +83,7 @@ export class NgxSelectComponent implements INgxSelectOptions, ControlValueAccess
     @Output() public close = new EventEmitter<void>();
     @Output() public select = new EventEmitter<any>();
     @Output() public remove = new EventEmitter<any>();
+    @Output() public filtered = new EventEmitter<TSelectOption[]>();
     @Output() public navigated = new EventEmitter<INgxOptionNavigated>();
     @Output() public selectionChanges = new EventEmitter<INgxSelectOption[]>();
 
@@ -236,6 +237,7 @@ export class NgxSelectComponent implements INgxSelectOptions, ControlValueAccess
                     }
                     return option;
                 });
+                this.filtered.emit(this.optionsFiltered);
                 this.cacheOptionsFilteredFlat = null;
                 this.navigateOption(ENavigation.firstIfOptionActiveInvisible);
                 this.cd.markForCheck();
@@ -391,7 +393,6 @@ export class NgxSelectComponent implements INgxSelectOptions, ControlValueAccess
             this.keyCodeToNavigateLast
         );
         const keysForClosedState = [].concat(this.keyCodeToOptionsOpen, this.keyCodeToRemoveSelected);
-
         if (this.optionsOpened && keysForOpenedState.indexOf(event.code) !== -1) {
             event.preventDefault();
             event.stopPropagation();
