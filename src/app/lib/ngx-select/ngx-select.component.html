@@ -40,7 +40,7 @@
     <div class="ngx-select__selected" *ngIf="multiple === true" (click)="inputClick(inputElRef && inputElRef['value'])">
         <span *ngFor="let option of optionsSelected; trackBy: trackByOption; let idx = index">
             <span tabindex="-1" [ngClass]="setBtnSize()" (click)="$event.stopPropagation()"
-                  class="ngx-select__selected-plural btn btn-default btn-secondary btn-xs">
+                  class="ngx-select__selected-plural btn btn-default btn-secondary btn-sm btn-xs">
 
                 <ng-container [ngTemplateOutlet]="templateSelectedOption || defaultTemplateOption"
                               [ngTemplateOutletContext]="{$implicit: option, index: idx, text: sanitize(option.text)}">
@@ -62,7 +62,7 @@
            [disabled]="disabled"
            [placeholder]="optionsSelected.length? '': placeholder"
            (click)="inputClick(input.value)"
-           autocomplete="off"
+           [autocomplete]="autocomplete"
            autocorrect="off"
            autocapitalize="off"
            spellcheck="false"
@@ -70,6 +70,7 @@
 
     <!-- options template -->
     <ul #choiceMenu role="menu" *ngIf="isFocused" class="ngx-select__choices dropdown-menu"
+        [ngClass]="dropDownMenuOtherClasses"
         [class.show]="showChoiceMenu()">
         <li class="ngx-select__item-group" role="menuitem"
             *ngFor="let opt of optionsFiltered; trackBy: trackByOption; let idxGroup=index">

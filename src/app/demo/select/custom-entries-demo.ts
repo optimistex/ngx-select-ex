@@ -4,7 +4,7 @@ import { FormControl } from '@angular/forms';
 
 @Component({
     selector: 'custom-entries-demo',
-    templateUrl: './custom-entries-demo.html'
+    templateUrl: './custom-entries-demo.html',
 })
 export class CustomEntriesDemoComponent {
     public items: string[] = ['Ana', 'Aleyna', 'Barbara', 'Charlotte', 'Diana', 'Elise', 'Fiona', 'Gina', 'Helene', 'Irene', 'Jessica',

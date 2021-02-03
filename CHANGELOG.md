@@ -2,6 +2,42 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.0.2](https://github.com/optimistex/ngx-select-ex/compare/v6.0.1...v6.0.2) (2021-01-23)
+
+
+### Bug Fixes
+
+* vulnerabilities ([4f261a3](https://github.com/optimistex/ngx-select-ex/commit/4f261a30eb5dd90f3780e61c28caea36bf6216cc))
+
+### [6.0.1](https://github.com/optimistex/ngx-select-ex/compare/v5.0.3...v6.0.1) (2020-12-01)
+
+### [5.0.3](https://github.com/optimistex/ngx-select-ex/compare/v5.0.2...v5.0.3) (2020-11-30)
+
+### [5.0.2](https://github.com/optimistex/ngx-select-ex/compare/v5.0.1...v5.0.2) (2020-11-10)
+
+### [5.0.1](https://github.com/optimistex/ngx-select-ex/compare/v4.0.0...v5.0.1) (2020-11-10)
+
+### [3.7.8](https://github.com/optimistex/ngx-select-ex/compare/v3.7.7...v3.7.8) (2020-04-14)
+
+### [3.7.7](https://github.com/optimistex/ngx-select-ex/compare/v3.7.6...v3.7.7) (2020-03-11)
+
+### [3.7.6](https://github.com/optimistex/ngx-select-ex/compare/v3.7.5...v3.7.6) (2020-01-13)
+
+
+### Bug Fixes
+
+* NgxSelectComponent.onMouseEnter ([a95d11a](https://github.com/optimistex/ngx-select-ex/commit/a95d11a))
+
+### [3.7.5](https://github.com/optimistex/ngx-select-ex/compare/v3.7.4...v3.7.5) (2020-01-13)
+
+### [3.7.4](https://github.com/optimistex/ngx-select-ex/compare/v3.7.3...v3.7.4) (2019-12-07)
+
+
+### Bug Fixes
+
+* removed whitespaces for linting ([cd0faae](https://github.com/optimistex/ngx-select-ex/commit/cd0faae))
+* ViewDestroyedError: detectChanges ([a4de144](https://github.com/optimistex/ngx-select-ex/commit/a4de144))
+
 ### [3.7.3](https://github.com/optimistex/ngx-select-ex/compare/v3.6.7...v3.7.3) (2019-10-08)
 
 ### 3.7.2 (2019-08-06)

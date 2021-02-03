@@ -1,4 +1,4 @@
-import {NgxSelectOption, TSelectOption} from './ngx-select.classes';
+import { NgxSelectOption, TSelectOption } from './ngx-select.classes';
 
 export type TNgxSelectOptionType = 'option' | 'optgroup';
 
@@ -48,4 +48,6 @@ export interface INgxSelectOptions {
     keyCodeToNavigateNext?: string;
     keyCodeToNavigateLast?: string;
     isFocused?: boolean;
+    autocomplete?: string;
+    dropDownMenuOtherClasses?: string;
 }
