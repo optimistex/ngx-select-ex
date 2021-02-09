@@ -1,19 +1,20 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-import {AppComponent} from './app.component';
-import {NgxSelectModule} from './lib/public_api';
-import {SampleSectionComponent} from './demo/sample-section.component';
-import {SelectSectionComponent} from './demo/select-section';
-import {ChildrenDemoComponent} from './demo/select/children-demo';
-import {MultipleDemoComponent} from './demo/select/multiple-demo';
-import {NoAutoCompleteDemoComponent} from './demo/select/no-autocomplete-demo';
-import {RichDemoComponent} from './demo/select/rich-demo';
-import {SingleDemoComponent} from './demo/select/single-demo';
-import {CommonModule} from '@angular/common';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {ButtonsModule, TabsModule} from 'ngx-bootstrap';
-import {CustomEntriesDemoComponent} from './demo/select/custom-entries-demo';
+import { AppComponent } from './app.component';
+import { NgxSelectModule } from './lib/public_api';
+import { SampleSectionComponent } from './demo/sample-section.component';
+import { SelectSectionComponent } from './demo/select-section';
+import { ChildrenDemoComponent } from './demo/select/children-demo';
+import { MultipleDemoComponent } from './demo/select/multiple-demo';
+import { NoAutoCompleteDemoComponent } from './demo/select/no-autocomplete-demo';
+import { RichDemoComponent } from './demo/select/rich-demo';
+import { SingleDemoComponent } from './demo/select/single-demo';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { CustomEntriesDemoComponent } from './demo/select/custom-entries-demo';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import {CustomEntriesDemoComponent} from './demo/select/custom-entries-demo';
         NoAutoCompleteDemoComponent,
         RichDemoComponent,
         SingleDemoComponent,
-        CustomEntriesDemoComponent
+        CustomEntriesDemoComponent,
     ],
     imports: [
         BrowserModule,
@@ -35,10 +36,10 @@ import {CustomEntriesDemoComponent} from './demo/select/custom-entries-demo';
         ReactiveFormsModule,
         NgxSelectModule,
         TabsModule.forRoot(),
-        ButtonsModule.forRoot()
+        ButtonsModule.forRoot(),
     ],
     providers: [],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
 })
 export class AppModule {
 }
