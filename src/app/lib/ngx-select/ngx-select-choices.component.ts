@@ -98,9 +98,10 @@ export class NgxSelectChoicesComponent implements OnInit, OnDestroy, OnChanges, 
         if (this.show) {
             const selectOffset = this.getViewportOffset(this.selectEl);
             const relativeParentOffset = this.getParentOffset(this.choiceMenuEl);
+            const appendToOffset = this.getAppendToElement();
 
-            const offsetTop = selectOffset.top - relativeParentOffset.top;
-            const offsetLeft = selectOffset.left - relativeParentOffset.left;
+            const offsetTop = selectOffset.top + appendToOffset.scrollTop - relativeParentOffset.top;
+            const offsetLeft = selectOffset.left + appendToOffset.scrollLeft - relativeParentOffset.left;
 
             this.choiceMenuEl.style.top = `${offsetTop + selectOffset.height}px`;
             this.choiceMenuEl.style.bottom = 'auto';
