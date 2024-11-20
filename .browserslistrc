@@ -10,3 +10,13 @@ last 2 versions
 Firefox ESR
 not dead
 not IE 9-11 # For IE 9-11 support, remove 'not'.
+chrome >= 63
+
+# Fix warning:
+#   One or more browsers which are configured in the project's Browserslist configuration will be ignored as ES5 output is not supported by the Angular CLI.
+#   Ignored browsers: kaios 2.5, op_mini all
+not kaios 2.5
+not op_mini all
+
+# Fix browsers for 1C embed browser support
+firefox >= 102

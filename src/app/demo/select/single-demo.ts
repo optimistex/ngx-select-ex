@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { INgxSelectOption } from '../../lib/ngx-select/ngx-select.interfaces';
 
 @Component({
@@ -18,7 +18,7 @@ export class SingleDemoComponent implements OnDestroy {
         'The Hague', 'Turin', 'Valencia', 'Vienna', 'Vilnius', 'Warsaw', 'Wrocław',
         'Zagreb', 'Zaragoza', 'Łódź'];
 
-    public ngxControl = new FormControl();
+    public ngxControl = new UntypedFormControl();
 
     private _ngxDefaultTimeout;
     private _ngxDefaultInterval;

@@ -1,6 +1,6 @@
 import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
 import { Component, ViewChild } from '@angular/core';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UntypedFormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 import { NgxSelectModule } from './ngx-select.module';
 import { NgxSelectComponent } from './ngx-select.component';
@@ -86,7 +86,7 @@ class TestNgxSelectComponent {
     };
 
     public select2 = {
-        formControl: new FormControl(),
+        formControl: new UntypedFormControl(),
         defaultValue: [],
 
         allowClear: false,
@@ -104,12 +104,12 @@ class TestNgxSelectComponent {
     };
 
     public select3 = {
-        formControl: new FormControl(),
+        formControl: new UntypedFormControl(),
         items$: new BehaviorSubject<any[]>([]),
     };
 
     public select4 = {
-        formControl: new FormControl(),
+        formControl: new UntypedFormControl(),
         items: [],
         appendTo: null,
     };

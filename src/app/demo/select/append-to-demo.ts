@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 
 @Component({
     selector: 'append-to-demo',
@@ -10,6 +10,6 @@ export class AppendToDemoComponent {
         'Berlin', 'Birmingham', 'Bradford', 'Bremen', 'Brussels', 'Bucharest',
         'Budapest', 'Cologne', 'Copenhagen'];
 
-    public ngxControl1 = new FormControl();
-    public ngxControl2 = new FormControl();
+    public ngxControl1 = new UntypedFormControl();
+    public ngxControl2 = new UntypedFormControl();
 }
