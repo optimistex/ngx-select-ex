@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [19.0.5](https://github.com/optimistex/ngx-select-ex/compare/v19.0.4...v19.0.5) (2024-11-21)
+
+
+### Bug Fixes
+
+* license ([e63d768](https://github.com/optimistex/ngx-select-ex/commit/e63d768d29d5a4bf64c28bef96f78cb3192b944c))
+
 ### [19.0.4](https://github.com/optimistex/ngx-select-ex/compare/v19.0.3...v19.0.4) (2024-11-21)
 
 
