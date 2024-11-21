@@ -1,6 +1,6 @@
 {
   "name": "ngx-select-ex",
-  "version": "19.0.1",
+  "version": "19.0.2",
   "description": "Angular based replacement for select boxes",
   "license": "MIT",
   "private": false,
@@ -53,10 +53,6 @@
     "multiselect",
     "multi-select"
   ],
-  "peerDependencies": {
-    "escape-string-regexp": "^5.0.0",
-    "lodash.isequal": "^4.5.0"
-  },
   "dependencies": {
     "@angular/animations": "^19.0.0",
     "@angular/cdk": "^19.0.0",
