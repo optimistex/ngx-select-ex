@@ -1,9 +1,16 @@
 import { Component } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
+import {ReactiveFormsModule, UntypedFormControl} from '@angular/forms';
+import {NgxSelectModule} from "ngx-select-ex";
+import {JsonPipe} from "@angular/common";
 
 @Component({
-    selector: 'append-to-demo',
+    selector: 'app-append-to-demo',
     templateUrl: './append-to-demo.html',
+    imports: [
+        NgxSelectModule,
+        ReactiveFormsModule,
+        JsonPipe
+    ]
 })
 export class AppendToDemoComponent {
     public items: string[] = ['Amsterdam', 'Antwerp', 'Athens', 'Barcelona',

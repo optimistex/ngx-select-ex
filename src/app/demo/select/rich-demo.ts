@@ -1,5 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
+import {NgxSelectModule} from 'ngx-select-ex';
+import {FormsModule} from '@angular/forms';
+import {JsonPipe} from '@angular/common';
 
 const COLORS = [
     {name: 'Blue 10', hex: '#C0E6FF'},
@@ -45,16 +48,22 @@ const COLORS = [
 ];
 
 @Component({
-    selector: 'rich-demo',
-    templateUrl: './rich-demo.html',
-    styles: [`.color-box {
-        display: inline-block;
-        height: 14px;
-        width: 14px;
-        margin-right: 4px;
-        border: 1px solid #000;
-    }`],
-    encapsulation: ViewEncapsulation.None,  // Enable dynamic HTML styles
+  selector: 'app-rich-demo',
+  templateUrl: './rich-demo.html',
+  styles: [`.color-box {
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    margin-right: 4px;
+    border: 1px solid #000;
+  }`],
+  encapsulation: ViewEncapsulation.None,
+  imports: [
+    NgxSelectModule,
+    FormsModule,
+    JsonPipe
+  ],
+  // Enable dynamic HTML styles
 })
 export class RichDemoComponent {
     public items: any[] = COLORS;

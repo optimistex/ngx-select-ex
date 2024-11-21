@@ -1,10 +1,16 @@
 import { Component, OnDestroy } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
-import { INgxSelectOption } from '../../lib/ngx-select/ngx-select.interfaces';
+import {ReactiveFormsModule, UntypedFormControl} from '@angular/forms';
+import {INgxSelectOption, NgxSelectModule} from 'ngx-select-ex';
+import {JsonPipe} from '@angular/common';
 
 @Component({
-    selector: 'single-demo',
-    templateUrl: './single-demo.html',
+  selector: 'app-single-demo',
+  templateUrl: './single-demo.html',
+  imports: [
+    JsonPipe,
+    NgxSelectModule,
+    ReactiveFormsModule
+  ]
 })
 export class SingleDemoComponent implements OnDestroy {
     public items: string[] = ['Amsterdam', 'Antwerp', 'Athens', 'Barcelona',

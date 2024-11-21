@@ -1,8 +1,16 @@
 import { Component } from '@angular/core';
+import {NgxSelectModule} from 'ngx-select-ex';
+import {FormsModule} from '@angular/forms';
+import {JsonPipe} from '@angular/common';
 
 @Component({
-    selector: 'no-autocomplete-demo',
-    templateUrl: './no-autocomplete-demo.html',
+  selector: 'app-no-autocomplete-demo',
+  templateUrl: './no-autocomplete-demo.html',
+  imports: [
+    NgxSelectModule,
+    FormsModule,
+    JsonPipe
+  ]
 })
 export class NoAutoCompleteDemoComponent {
     public _items: string[] = ['Amsterdam', 'Antwerp', 'Athens', 'Barcelona',

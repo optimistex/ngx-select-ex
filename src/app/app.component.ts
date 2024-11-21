@@ -1,17 +1,18 @@
 import { Component, AfterContentInit } from '@angular/core';
+import { NgxSelectModule } from 'ngx-select-ex';
+import {SelectSectionComponent} from './demo/select-section';
 
 declare const require: any;
 
-// tslint:disable-next-line:no-var-requires
 const pac = require('../../package.json');
 
-// tslint:disable-next-line:no-var-requires
 const gettingStarted = require('html-loader!markdown-loader!./getting-started.md')?.default;
 
 @Component({
-    selector: 'app-demo',
+    selector: 'app-root',
+    imports: [NgxSelectModule, SelectSectionComponent],
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
+    styleUrls: ['./app.component.scss'],
 })
 
 export class AppComponent implements AfterContentInit {
@@ -20,10 +21,10 @@ export class AppComponent implements AfterContentInit {
 
     public ngAfterContentInit(): any {
         setTimeout(() => {
-            if (typeof PR !== 'undefined') {
-                // google code-prettify
-                PR.prettyPrint();
-            }
+            // if (typeof PR !== 'undefined') {
+            //     google code-prettify
+                // PR.prettyPrint();
+            // }
         }, 150);
     }
 }

@@ -1,8 +1,16 @@
 import { Component } from '@angular/core';
+import {NgxSelectModule} from 'ngx-select-ex';
+import {FormsModule} from '@angular/forms';
+import {JsonPipe} from '@angular/common';
 
 @Component({
-    selector: 'children-demo',
-    templateUrl: './children-demo.html',
+  selector: 'app-children-demo',
+  templateUrl: './children-demo.html',
+  imports: [
+    NgxSelectModule,
+    FormsModule,
+    JsonPipe
+  ]
 })
 export class ChildrenDemoComponent {
     public items: any[] = [
