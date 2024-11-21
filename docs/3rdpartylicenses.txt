@@ -238,6 +238,7 @@ terms above.
 
 
 ngx-select-ex
+MIT
 The MIT License (MIT)
 
 Copyright (c) 2017-2018 Konstantin Polyntsov <optimistex@gmail.com>
