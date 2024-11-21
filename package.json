@@ -1,6 +1,6 @@
 {
   "name": "ngx-select-ex",
-  "version": "19.0.2",
+  "version": "19.0.3",
   "description": "Angular based replacement for select boxes",
   "license": "MIT",
   "private": false,
@@ -14,7 +14,7 @@
   },
   "homepage": "https://github.com/optimistex/ngx-select-ex#readme",
   "scripts": {
-    "build": "npm run lint && npm run build:package && npm run test && npm run build:demo && npm run sync && git add -A",
+    "build": "npm run lint && npm run sync && npm run build:package && npm run test && npm run build:demo && git add -A",
     "build:demo": "ng build ngx-select-ex-demo",
     "build:package": "ng build ngx-select-ex",
     "lint": "ng lint",
