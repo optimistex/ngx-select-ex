@@ -1,6 +1,6 @@
 {
   "name": "ngx-select-ex",
-  "version": "18.0.1",
+  "version": "19.0.0",
   "peerDependencies": {
     "@angular/common": "^19.0.0",
     "@angular/core": "^19.0.0"
