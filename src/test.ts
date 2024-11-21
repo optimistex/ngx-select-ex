@@ -12,5 +12,11 @@ getTestBed().initTestEnvironment(
     BrowserDynamicTestingModule,
     platformBrowserDynamicTesting(), {
         teardown: {destroyAfterEach: false},
+
+        /**
+         * @see https://github.com/angular/angular/issues/36430#issuecomment-1117801535
+         */
+        errorOnUnknownProperties: true,
+        errorOnUnknownElements: true,
     }
 );

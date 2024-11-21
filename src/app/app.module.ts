@@ -13,8 +13,8 @@ import { SingleDemoComponent } from './demo/select/single-demo';
 import { AppendToDemoComponent } from './demo/select/append-to-demo';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TabsModule } from 'ngx-bootstrap/tabs';
-import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatTabsModule } from "@angular/material/tabs";
 
 
 @NgModule({
@@ -35,10 +35,11 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
         FormsModule,
         ReactiveFormsModule,
         NgxSelectModule,
-        TabsModule.forRoot(),
-        ButtonsModule.forRoot(),
+        MatTabsModule,
     ],
-    providers: [],
+    providers: [
+        provideAnimationsAsync()
+    ],
     bootstrap: [AppComponent],
 })
 export class AppModule {
