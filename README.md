@@ -4,13 +4,10 @@
 
 [![npm version](https://badge.fury.io/js/ngx-select-ex.svg)](http://badge.fury.io/js/ngx-select-ex)
 [![npm downloads](https://img.shields.io/npm/dm/ngx-select-ex.svg)](https://npmjs.org/ngx-select-ex)
-[![Build Status](https://travis-ci.org/optimistex/ngx-select-ex.svg?branch=master)](https://travis-ci.org/optimistex/ngx-select-ex)
-[![Angular 2 Style Guide](https://mgechev.github.io/angular2-style-guide/images/badge.svg)](https://github.com/mgechev/angular2-style-guide)
 
 Native Angular component for Select
 
-- Requires [Angular](https://angular.io/) version 5 or higher!
-- Compatible with [Angular](https://angular.io/) version 4.
+- Requires [Angular](https://angular.dev/) version 18 or higher!
 - Compatible with [Bootstrap 3](https://getbootstrap.com/docs/3.3/) and **[Bootstrap 4](https://getbootstrap.com/)**
 
 ## Usage
@@ -19,12 +16,6 @@ Native Angular component for Select
 
     ```bash
     npm i ngx-select-ex --save
-    ```
-
-    For usage with Angular 4 install using the following command:
-
-    ```bash
-    npm i ngx-select-ex@ng4 --save
     ```
 
 2. Add NgxSelectModule into your AppModule class. app.module.ts would look like this:
@@ -236,6 +227,11 @@ Thanks for understanding!
 
 ## Contribute
 
+Start working:
+- `npm install`
+- `npm run build:package` - **NECESSARY** since DEMO uses the package from `./dist` folder!
+
+Other commands:
 - `npm start` - Run demo for local debugging.
 - `npm test` - Run unit tests only once. Use `ng test` for running tests with files watching.
 - `npm run build` - Build the demo & package for release & publishing.

@@ -6,12 +6,6 @@
     npm i ngx-select-ex --save
     ```
 
-    For usage with Angular 4 install using the following command:
-
-    ```bash
-    npm i ngx-select-ex@ng4 --save
-    ```
-
 2. Add NgxSelectModule into your AppModule class. app.module.ts would look like this:
 
     ```typescript

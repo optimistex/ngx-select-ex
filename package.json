@@ -14,7 +14,7 @@
   },
   "homepage": "https://github.com/optimistex/ngx-select-ex#readme",
   "scripts": {
-    "build": "npm run lint && npm run build:package && npm run test && npm run build:demo && git add -A",
+    "build": "npm run lint && npm run build:package && npm run test && npm run build:demo && npm run sync && git add -A",
     "build:demo": "ng build ngx-select-ex-demo",
     "build:package": "ng build ngx-select-ex",
     "lint": "ng lint",
@@ -25,7 +25,9 @@
     "ng": "ng",
     "release": "standard-version --commit-all",
     "release:major": "standard-version --release-as major --commit-all",
-    "sync-version": "npm --prefix=projects/ngx-select-ex pkg set version=$(npm pkg get version | xargs)",
+    "sync": "npm run sync:version && npm run sync:readme",
+    "sync:version": "npm --prefix=projects/ngx-select-ex pkg set version=$(npm pkg get version | xargs)",
+    "sync:readme": "cp README.md projects/ngx-select-ex/README.md",
     "publish": "npm publish ./dist/ngx-select-ex",
     "publish-dev": "npm publish ./dist/ngx-select-ex --tag dev",
     "start": "ng serve",
@@ -36,17 +38,15 @@
   },
   "standard-version": {
     "scripts": {
-      "postbump": "npm run sync-version && npm run build"
+      "postbump": "npm run build"
     }
   },
   "keywords": [
     "ngx-select",
     "ngx-select-ex",
     "angular",
-    "angular2",
-    "angular4",
-    "angular5",
-    "angular6",
+    "angular18",
+    "angular19",
     "select",
     "select2",
     "ui-select",
