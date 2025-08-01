@@ -3,8 +3,8 @@
   "version": "19.0.5",
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "^18.0.0 || ^19.0.0",
-    "@angular/core": "^18.0.0 || ^19.0.0",
+    "@angular/common": ">=18.0.0",
+    "@angular/core": ">=18.0.0",
     "escape-string-regexp": "^5.0.0",
     "lodash.isequal": "^4.5.0"
   },
