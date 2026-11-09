@@ -1380,6 +1380,32 @@ describe('NgxSelectComponent', () => {
         expect(selectedItem(3).innerHTML).toContain('item 9');
     }));
 
+    it('should preserve the selected value when disabling an open appended menu', fakeAsync(() => {
+        const {select4, component4} = fixture.componentInstance;
+        select4.items = items1;
+        select4.appendTo = '#sel-4-container';
+        select4.formControl.setValue('item zero');
+        fixture.detectChanges();
+
+        formControl(4).click();
+        fixture.detectChanges();
+        tick(16);
+        fixture.detectChanges();
+
+        const menu = querySelector(fixture.debugElement.nativeElement, '#sel-4-container .ngx-select__choices');
+        const option = querySelectorAll(menu, '.ngx-select__item')[1];
+        const selected = createSpy('selected');
+        component4.select.subscribe(selected);
+
+        select4.formControl.disable();
+        fixture.detectChanges();
+        option.click();
+        fixture.detectChanges();
+
+        expect(select4.formControl.value).toBe('item zero');
+        expect(selected).not.toHaveBeenCalled();
+    }));
+
     describe('test appendTo', () => {
         it('should keep choices menu inside select container', () => {
             fixture.componentInstance.select4.items = items1;

@@ -69,7 +69,16 @@ export class NgxSelectComponent implements INgxSelectOptions, ControlValueAccess
     @Input() public allowClear = false;
     @Input() public placeholder = '';
     @Input() public noAutoComplete = false;
-    @Input() public disabled = false;
+    @Input() public set disabled(value: boolean) {
+        this._disabled = value;
+        if (value && this.optionsOpened) {
+            this.optionsClose();
+        }
+    }
+    public get disabled(): boolean {
+        return this._disabled;
+    }
+    private _disabled = false;
     @Input() public defaultValue: any[] = [];
     @Input() public autoSelectSingleOption = false;
     @Input() public autoClearSearch = false;
@@ -501,7 +510,7 @@ export class NgxSelectComponent implements INgxSelectOptions, ControlValueAccess
             event.preventDefault();
             event.stopPropagation();
         }
-        if (option && !option.disabled) {
+        if (!this.disabled && option && !option.disabled) {
             this.subjOptionsSelected.next((this.multiple ? this.subjOptionsSelected.value : []).concat([option]));
             this.select.emit(option.value);
             if (!this.keepSelectMenuOpened) {
